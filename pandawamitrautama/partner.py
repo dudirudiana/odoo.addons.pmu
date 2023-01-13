@@ -5,3 +5,4 @@ class ResPartner(models.Model):
 
     is_user = fields.Boolean(string="Is User", default=False)
     is_supplier = fields.Boolean(string="Is Supplier", default=False)
+    is_customer = fields.Boolean(string="Is Customer", default=False)
