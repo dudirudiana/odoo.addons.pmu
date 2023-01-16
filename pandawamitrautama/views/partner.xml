@@ -5,10 +5,28 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='vat']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='type']" position="before">
+                <field name="code"/>
+            </xpath>
+            <xpath expr="//field[@name='function']" position="before">
+                <field name="is_active"/>
+            </xpath>
+            <xpath expr="//field[@name='vat']" position="after">
+                <field name="pic"/>
+                <field name="npwp"/>
+            </xpath>
             <xpath expr="//field[@name='category_id']" position="after">
                 <field name="is_user"/>
                 <field name="is_supplier"/>
                 <field name="is_customer"/>
+            </xpath>
+            <xpath expr="//page[@name='internal_notes']" position="after">
+                <group string="Technical">
+                    <field name="pid"/>
+                </group>
             </xpath>
         </field>
     </record>
